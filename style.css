@@ -1,0 +1,63 @@
+body{
+    background-color: #4e5452;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#content{
+    background-color: #063971;
+    display: flex;
+    height: 540px;
+    width: 450px;
+    margin-top: 200px;
+    margin-left: 470px;
+    border-radius: 45px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+#display{
+    background-color: gainsboro;
+    font-size: 70px;
+    display: flex;
+    height: 85px;
+    width: 310px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 310px;
+    width: 310px;
+}
+
+button{
+    height: 50px;
+    width: 70px;
+    font-size: 30px;
+    border-radius: 5px;
+    border: none;
+}
+
+.number{
+    background-color:silver;
+}
+
+.operator{
+    background-color:darkorange;
+}
+
+#equal{
+    background-color: yellowgreen;
+}
+
+#clear{
+    background-color: firebrick;
+}
+
+#negate, #square{
+    background-color: aqua;
+}
