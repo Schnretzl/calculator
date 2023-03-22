@@ -1,4 +1,4 @@
-let operand1 = null, operand2 = null, operator = null, currentTotal = null;
+let operand1 = null, operand2 = null, operator = null, currentTotal = 0;
 
 function operate(operator, op1, op2){
     switch(operator){
@@ -9,4 +9,8 @@ function operate(operator, op1, op2){
     }
 }
 
-console.log(operate('/',3,7));
+let test = document.querySelector('#one');
+test.addEventListener('click', () => {
+    currentTotal = (currentTotal * 10) + 1;
+    console.log(currentTotal);
+});
