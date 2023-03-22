@@ -9,8 +9,10 @@ function operate(operator, op1, op2){
     }
 }
 
-let test = document.querySelector('#one');
-test.addEventListener('click', () => {
-    currentTotal = (currentTotal * 10) + 1;
-    console.log(currentTotal);
-});
+let test = document.querySelectorAll('.number');
+for(let btn in test){
+    test[btn].addEventListener('click', () => {
+        currentTotal = (currentTotal * 10) + 1;
+        console.log(currentTotal);
+    });
+}
