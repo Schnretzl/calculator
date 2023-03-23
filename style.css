@@ -18,10 +18,10 @@ body{
 
 #display{
     background-color: gainsboro;
-    font-size: 70px;
+    font-size: 30px;
     display: flex;
-    height: 85px;
-    width: 310px;
+    height: 80px;
+    width: 370px;
     justify-content: flex-end;
     align-items: center;
 }
@@ -40,6 +40,10 @@ button{
     font-size: 30px;
     border-radius: 5px;
     border: none;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 .number{

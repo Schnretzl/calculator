@@ -15,6 +15,10 @@ for(let i = 0; i < 10; i++){
     inputNum[i].addEventListener('click', () => {
         if(operator === null){
             operand1 = (operand1 * 10) + parseInt(inputNum[i].textContent);
+            if(operand1.toString().length >= tooLong){
+                display.style.fontSize = display.style.fontSize + 'px';
+                tooLong++;
+            }
             display.textContent = operand1;
         }else{
             operand2 = (operand2 * 10) + parseInt(inputNum[i].textContent);        
@@ -27,6 +31,7 @@ const inputOperator = document.querySelectorAll('.operator');
 for(let i = 0; i < 4; i++){
     inputOperator[i].addEventListener('click', () => {
         operator = inputOperator[i].textContent;
+        operand2 = null;
     });
 }
 
@@ -36,6 +41,7 @@ clearAll.addEventListener('click', () => {
     operand2 = null;
     operator = null;
     currentTotal = null;
+    display.style.fontSize = "75px";
     display.textContent = '0';
 });
 
@@ -45,8 +51,7 @@ performOp.addEventListener('click', () => {
         case '+':currentTotal = operand1 + operand2; break;
         case '-':currentTotal = operand1 - operand2; break;
         case '*':currentTotal = operand1 * operand2; break;
-        case '/':if(operand2 === 0); break;
-            currentTotal = operand1 / operand2; break;
+        case '/':currentTotal = operand1 / operand2; break;
     }
     if(operator == "/" && operand2 === 0){
         display.style.fontSize = "45px";
