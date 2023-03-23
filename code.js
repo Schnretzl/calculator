@@ -45,9 +45,16 @@ performOp.addEventListener('click', () => {
         case '+':currentTotal = operand1 + operand2; break;
         case '-':currentTotal = operand1 - operand2; break;
         case '*':currentTotal = operand1 * operand2; break;
-        case '/':currentTotal = operand1 / operand2; break;
+        case '/':if(operand2 === 0); break;
+            currentTotal = operand1 / operand2; break;
     }
-    display.textContent = currentTotal;
+    if(operator == "/" && operand2 === 0){
+        display.style.fontSize = "45px";
+        display.textContent = "No can do bro";
+    }
+    else{
+        display.textContent = currentTotal;
+    }
     operand1 = currentTotal;
 })
 
