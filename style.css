@@ -46,6 +46,10 @@ button{
     background-color:silver;
 }
 
+#zero{
+    width: 150px;
+}
+
 .operator{
     background-color:darkorange;
 }
