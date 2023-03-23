@@ -48,5 +48,6 @@ performOp.addEventListener('click', () => {
         case '/':currentTotal = operand1 / operand2; break;
     }
     display.textContent = currentTotal;
+    operand1 = currentTotal;
 })
 
