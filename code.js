@@ -1,4 +1,4 @@
-let operand1 = null, operand2 = null, operator = null, currentTotal = 0;
+let operand1 = null, operand2 = null, operator = null, currentTotal = 0, tooLong = 8;
 const display = document.querySelector('#display');
 
 function operate(operator, op1, op2){
@@ -35,5 +35,18 @@ clearAll.addEventListener('click', () => {
     operand1 = null;
     operand2 = null;
     operator = null;
+    currentTotal = null;
     display.textContent = '0';
+});
+
+const performOp = document.querySelector('#equal');
+performOp.addEventListener('click', () => {
+    switch(operator){
+        case '+':currentTotal = operand1 + operand2; break;
+        case '-':currentTotal = operand1 - operand2; break;
+        case '*':currentTotal = operand1 * operand2; break;
+        case '/':currentTotal = operand1 / operand2; break;
+    }
+    display.textContent = currentTotal;
 })
+
