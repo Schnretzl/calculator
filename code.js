@@ -63,3 +63,12 @@ performOp.addEventListener('click', () => {
     operand1 = currentTotal;
 })
 
+const negate = document.querySelector('#negate');
+negate.addEventListener('click', () => {
+    if(currentTotal < 0){
+        operand1 = Math.abs(display.textContent);
+    }else{
+        operand1 = (Math.abs(display.textContent) * -1);
+    }
+    display.textContent = operand1;
+});
