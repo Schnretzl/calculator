@@ -10,7 +10,7 @@ function operate(operator, op1, op2){
     }
 }
 
-let inputNum = document.querySelectorAll('.number');
+const inputNum = document.querySelectorAll('.number');
 for(let i = 0; i < 10; i++){
     inputNum[i].addEventListener('click', () => {
         if(operator === null){
@@ -23,15 +23,17 @@ for(let i = 0; i < 10; i++){
     });
 }
 
-let inputOperator = document.querySelectorAll('.operator');
+const inputOperator = document.querySelectorAll('.operator');
 for(let i = 0; i < 4; i++){
     inputOperator[i].addEventListener('click', () => {
         operator = inputOperator[i].textContent;
-        display.textContent = operator;
     });
 }
 
-
-/* function updateDisplay(input){
-    () => display.textContent = input;
-} */
+const clearAll = document.querySelector('#clear');
+clearAll.addEventListener('click', () => {
+    operand1 = null;
+    operand2 = null;
+    operator = null;
+    display.textContent = '0';
+})
