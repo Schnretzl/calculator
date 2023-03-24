@@ -1,4 +1,4 @@
-let operand1 = null, operand2 = null, operator = null, currentTotal = 0, tooLong = 8;
+let operand1 = null, operand2 = null, operator = null, currentTotal = 0, tooLong = 8, lastBtnClickedShouldReset = false;
 const display = document.querySelector('#display');
 
 function operate(operator, op1, op2){
@@ -21,11 +21,20 @@ for(let i = 0; i < 10; i++){
             }
             display.textContent = operand1;
         }else{
-            if(display.textContent = "")
-
+            if(lastBtnClickedShouldReset){
+                operand1 = parseInt(inputNum[i].textContent);
+                operand2 = null;
+                operator = null;
+                // operator = null;
+                display.textContent = operand1;
+                lastBtnClickedShouldReset = false;
+            }
+            else{
             operand2 = (operand2 * 10) + parseInt(inputNum[i].textContent);        
             display.textContent = operand2;
+            }
         }
+        lastBtnClickedShouldReset = false;
     });
 }
 
@@ -34,6 +43,7 @@ for(let i = 0; i < 4; i++){
     inputOperator[i].addEventListener('click', () => {
         operator = inputOperator[i].textContent;
         operand2 = null;
+        lastBtnClickedShouldReset = false;
     });
 }
 
@@ -45,6 +55,7 @@ clearAll.addEventListener('click', () => {
     currentTotal = null;
     display.style.fontSize = "75px";
     display.textContent = '0';
+    lastBtnClickedShouldReset = true;
 });
 
 const performOp = document.querySelector('#equal');
@@ -63,7 +74,8 @@ performOp.addEventListener('click', () => {
         display.textContent = currentTotal;
     }
     operand1 = currentTotal;
-})
+    lastBtnClickedShouldReset = true;
+});
 
 const negate = document.querySelector('#negate');
 negate.addEventListener('click', () => {
@@ -73,10 +85,13 @@ negate.addEventListener('click', () => {
         operand1 = (Math.abs(display.textContent) * -1);
     }
     display.textContent = operand1;
+    lastBtnClickedShouldReset = false;
 });
 
 const square = document.querySelector('#square');
 square.addEventListener('click', () => {
     currentTotal = Math.pow(parseFloat(display.textContent), 2);
+    operand1 = currentTotal;
     display.textContent = currentTotal;
+    lastBtnClickedShouldReset = true;
 });
