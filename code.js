@@ -21,6 +21,8 @@ for(let i = 0; i < 10; i++){
             }
             display.textContent = operand1;
         }else{
+            if(display.textContent = "")
+
             operand2 = (operand2 * 10) + parseInt(inputNum[i].textContent);        
             display.textContent = operand2;
         }
@@ -71,4 +73,10 @@ negate.addEventListener('click', () => {
         operand1 = (Math.abs(display.textContent) * -1);
     }
     display.textContent = operand1;
+});
+
+const square = document.querySelector('#square');
+square.addEventListener('click', () => {
+    currentTotal = Math.pow(parseFloat(display.textContent), 2);
+    display.textContent = currentTotal;
 });
